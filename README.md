@@ -1,4 +1,4 @@
-# Tutorial del libro flask mega Tutorial
+# Tutorial del libro flask mega tutorial
 
 ### Microblog
 > dentro la cartella microblog troviamo il progetto microblog, per il momento fino al capitolo 2.
