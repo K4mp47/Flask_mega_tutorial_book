@@ -8,6 +8,7 @@ from flask_login import LoginManager
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 from flask_bootstrap import Bootstrap
+from flask_moment import Moment
 import os
 
 app = Flask(__name__)
@@ -16,6 +17,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db) 
 login = LoginManager(app)
 bootstrap = Bootstrap(app)
+moment = Moment(app)
 login.login_view = 'login'      
 # this code come from stack and chatgpt, for make the 'context'
 # it's actually works and i use it for made function
