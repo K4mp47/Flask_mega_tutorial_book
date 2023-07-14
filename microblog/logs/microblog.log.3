@@ -1,4 +1,4 @@
-2023-07-14 17:29:48,671 ERROR: Exception on /explore [GET] [in /home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py:1414]
+2023-07-14 10:48:15,534 ERROR: Exception on /index [GET] [in /home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py:1414]
 Traceback (most recent call last):
   File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
     response = self.full_dispatch_request()
@@ -10,11 +10,75 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/routes.py", line 124, in explore
-    posts = Post.query.order_by(Post.timestamp.desc()).paginate(pages, app.config['POSTS_PER_PAGE'], False)
+  File "/home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/routes.py", line 23, in index
+    posts = current_user.followed_posts().paginate( page, per_page=app.config['POST_PER_PAGE'], error_out=False)
+TypeError: Query.paginate() takes 1 positional argument but 2 positional arguments (and 2 keyword-only arguments) were given
+2023-07-14 10:50:20,707 INFO: Microblog startup [in /home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/__init__.py:48]
+2023-07-14 10:50:24,727 ERROR: Exception on /index [GET] [in /home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/routes.py", line 23, in index
+    posts = current_user.followed_posts().paginate(page)
+TypeError: Query.paginate() takes 1 positional argument but 2 were given
+2023-07-14 10:50:25,454 ERROR: Exception on /index [GET] [in /home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/routes.py", line 23, in index
+    posts = current_user.followed_posts().paginate(page)
+TypeError: Query.paginate() takes 1 positional argument but 2 were given
+2023-07-14 10:51:10,518 INFO: Microblog startup [in /home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/__init__.py:48]
+2023-07-14 10:51:32,872 INFO: Microblog startup [in /home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/__init__.py:48]
+2023-07-14 10:51:33,779 ERROR: Exception on /index [GET] [in /home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/routes.py", line 23, in index
+    posts = current_user.followed_posts().paginate(page)
+TypeError: Query.paginate() takes 1 positional argument but 2 were given
+2023-07-14 10:53:09,781 INFO: Microblog startup [in /home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/__init__.py:48]
+2023-07-14 10:53:12,746 ERROR: Exception on /index [GET] [in /home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/routes.py", line 23, in index
+    posts = current_user.followed_posts().paginate( page, app.config['POST_PER_PAGE'], False)
 TypeError: Query.paginate() takes 1 positional argument but 4 were given
-2023-07-14 17:31:30,950 INFO: Microblog startup [in /home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/__init__.py:48]
-2023-07-14 17:31:33,661 ERROR: Exception on /explore [GET] [in /home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py:1414]
+2023-07-14 17:18:52,814 INFO: Microblog startup [in /home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/__init__.py:48]
+2023-07-14 17:18:54,517 ERROR: Exception on /index [GET] [in /home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py:1414]
 Traceback (most recent call last):
   File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
     response = self.full_dispatch_request()
@@ -26,10 +90,10 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/routes.py", line 126, in explore
-    posts = Post.query.order_by(Post.timestamp.desc()).paginate(pages, app.config['POSTS_PER_PAGE'], False)
+  File "/home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/routes.py", line 23, in index
+    posts = current_user.followed_posts().paginate( page, app.config['POST_PER_PAGE'], False)
 TypeError: Query.paginate() takes 1 positional argument but 4 were given
-2023-07-14 17:31:34,346 ERROR: Exception on /explore [GET] [in /home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py:1414]
+2023-07-14 17:18:56,172 ERROR: Exception on /index [GET] [in /home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py:1414]
 Traceback (most recent call last):
   File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
     response = self.full_dispatch_request()
@@ -41,68 +105,7 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/routes.py", line 126, in explore
-    posts = Post.query.order_by(Post.timestamp.desc()).paginate(pages, app.config['POSTS_PER_PAGE'], False)
+  File "/home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/routes.py", line 23, in index
+    posts = current_user.followed_posts().paginate( page, app.config['POST_PER_PAGE'], False)
 TypeError: Query.paginate() takes 1 positional argument but 4 were given
-2023-07-14 17:32:03,441 ERROR: Exception on /explore [GET] [in /home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py:1414]
-Traceback (most recent call last):
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/routes.py", line 126, in explore
-    #posts = Post.query.order_by(Post.timestamp.desc()).paginate(pages, app.config['POSTS_PER_PAGE'], False)
-TypeError: Query.paginate() takes 1 positional argument but 4 were given
-2023-07-14 17:32:03,906 ERROR: Exception on /explore [GET] [in /home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py:1414]
-Traceback (most recent call last):
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/routes.py", line 126, in explore
-    #posts = Post.query.order_by(Post.timestamp.desc()).paginate(pages, app.config['POSTS_PER_PAGE'], False)
-TypeError: Query.paginate() takes 1 positional argument but 4 were given
-2023-07-14 17:32:07,312 INFO: Microblog startup [in /home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/__init__.py:48]
-2023-07-14 17:32:09,087 ERROR: Exception on /explore [GET] [in /home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py:1414]
-Traceback (most recent call last):
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/routes.py", line 127, in explore
-    next_url = url_for('index', page=posts.next_num) if posts.has_next else None
-NameError: name 'posts' is not defined
-2023-07-14 17:32:09,844 ERROR: Exception on /explore [GET] [in /home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py:1414]
-Traceback (most recent call last):
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/home/albertocampagnolo/.local/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/routes.py", line 127, in explore
-    next_url = url_for('index', page=posts.next_num) if posts.has_next else None
-NameError: name 'posts' is not defined
-2023-07-14 17:32:50,626 INFO: Microblog startup [in /home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/__init__.py:48]
+2023-07-14 17:21:28,686 INFO: Microblog startup [in /home/albertocampagnolo/Desktop/Flask_mega_tutorial_book/microblog/app/__init__.py:48]
